@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Client, Message } from '@stomp/stompjs';
 import { Subject } from 'rxjs';
+import { ChatMessage } from '../interfaces/chat-message';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class ChatService {
     this.stompClient.activate();
   }
 
-  public sendMessage(chatMessage: string) {
+  public sendMessage(chatMessage: ChatMessage) {
     this.stompClient?.publish({
       destination: '/app/sendMessage',
       body: JSON.stringify(chatMessage)
