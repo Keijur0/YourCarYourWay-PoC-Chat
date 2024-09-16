@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ChatServiceService {
+export class ChatService {
 
   private stompClient: Client | undefined;
 
