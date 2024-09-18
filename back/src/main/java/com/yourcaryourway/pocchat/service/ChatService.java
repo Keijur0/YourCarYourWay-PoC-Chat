@@ -14,9 +14,9 @@ public class ChatService {
     
     private final List<ChatMessage> messages = new ArrayList<>();
 
-    public void sendMessage(ChatMessageDto chatMessageDto) {
+    public void saveMessage(ChatMessageDto chatMessageDto) {
         ChatMessage chatMessage = new ChatMessage();
-        chatMessage.setContent(chatMessage.getContent());
+        chatMessage.setContent(chatMessageDto.getContent());
         chatMessage.setSender(chatMessageDto.getSender());
         chatMessage.setTimestamp(LocalDateTime.now());
         messages.add(chatMessage);
