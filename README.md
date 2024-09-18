@@ -43,7 +43,7 @@ Pour lancer le projet Java, il vous faut d'abord créer les variables d'environn
 
 Placez-vous dans le dossier `/back` du projet et tappez la commande:
 
-`mvn spring-boot:run
+`mvn spring-boot:run`
 
 ## Lancer le projet Angular (Frontend)
 Pour lancer le projet Angular, placez-vous dans le dossier `/front` du projet et tappez la commande:
