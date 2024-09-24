@@ -74,7 +74,7 @@ CREATE TABLE TICKETS (
     user_id INT NOT NULL,
     topic VARCHAR(255) NOT NULL,
     status VARCHAR(40) NOT NULL,
-    assignee VARCHAR(40) NOT NULL,
+    agent_id VARCHAR(40) NOT NULL,
     creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_edit_date TIMESTAMP NOT NULL,
     solved_date TIMESTAMP
@@ -100,7 +100,9 @@ ALTER TABLE PAYMENTS
 
 ALTER TABLE TICKETS
     ADD CONSTRAINT fk_tickets_user
-    FOREIGN KEY (user_id) REFERENCES USERS(id);
+    FOREIGN KEY (user_id) REFERENCES USERS(id),
+    ADD CONSTRAINT fk_tickets_agent
+    FOREIGN KEY (agent_id) REFERENCES USERS(id);
 
 ALTER TABLE MESSAGES
     ADD CONSTRAINT fk_messages_ticket
